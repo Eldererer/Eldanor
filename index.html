@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#241a12">
+<title>Eldanor</title>
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+:root{--ink:#f2e5c4;--muted:#bba989;--gold:#d6ad5c;--panel:#211a15e8;--line:#6e5637;--danger:#b34b45}
+*{box-sizing:border-box} body{margin:0;font-family:Georgia,serif;color:var(--ink);background:#15110e;
+background-image:radial-gradient(circle at 20% 0,#3a2a1b 0,transparent 38%),linear-gradient(#17120f,#0e0b09);min-height:100vh}
+header{padding:22px 18px 12px;text-align:center;border-bottom:1px solid var(--line);background:#17110ddd;position:sticky;top:0;z-index:5}
+h1{margin:0;color:var(--gold);letter-spacing:.08em;font-size:28px} .sub{color:var(--muted);font-size:13px;margin-top:4px}
+main{max-width:920px;margin:auto;padding:16px 14px 92px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:14px;box-shadow:0 8px 28px #0007}
+h2,h3{color:var(--gold);margin-top:0}.hero-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px}
+button,.btn{border:1px solid #8d7047;background:#35291d;color:var(--ink);padding:11px 13px;border-radius:11px;font:inherit}
+button:active{transform:scale(.98)} .primary{background:#6a4b27;color:#fff4d6}.danger{background:#542623}
+nav{position:fixed;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(5,1fr);background:#17110df5;border-top:1px solid var(--line);z-index:9;padding-bottom:env(safe-area-inset-bottom)}
+nav button{border:0;border-radius:0;background:transparent;padding:10px 2px 8px;font-size:11px;color:var(--muted)}nav button b{display:block;font-size:20px;margin-bottom:2px}
+nav button.active{color:var(--gold);background:#2b2118}.view{display:none}.view.active{display:block}
+.mapwrap{overflow:auto;border-radius:12px;background:#090705}.mapwrap img{display:block;width:1200px;max-width:none;height:auto}
+.stat{display:grid;grid-template-columns:1fr auto;gap:8px;padding:7px 0;border-bottom:1px solid #ffffff12}.hp{font-size:26px;color:#e7c276}
+.counter{display:flex;gap:8px;align-items:center}.counter button{padding:6px 12px;font-size:20px}.tags{display:flex;flex-wrap:wrap;gap:7px}.tag{padding:5px 8px;border:1px solid #705b3d;border-radius:999px;color:#d9c7a7;font-size:12px}
+textarea,input,select{width:100%;background:#100d0b;color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:10px;font:inherit;margin:5px 0 9px}
+.dice{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.result{text-align:center;font-size:34px;color:var(--gold);padding:18px}
+.small{font-size:12px;color:var(--muted)} .quest{padding:10px;border-left:3px solid var(--gold);background:#ffffff08;margin:8px 0}
+</style>
+</head>
+<body>
+<header><h1>ELDANOR</h1><div class="sub">Chroniken einer erwachenden Welt</div></header>
+<main>
+<section id="home" class="view active">
+ <div class="panel"><h2>Willkommen in Eldanor</h2><p>Valenmark, die Freien Küsten, der Finsterwald, Skarnheim und die Glutsteppe bilden eine Welt, in der alte Orte wieder erwachen.</p>
+ <div class="tags"><span class="tag">D&D-5e-inspiriert</span><span class="tag">W20</span><span class="tag">Offline-Speicherung</span></div></div>
+ <div class="panel"><h3>Aktuelle Chronik</h3><textarea id="sessionNote" rows="7" placeholder="Notizen zur aktuellen Spielsitzung …"></textarea><button onclick="saveAll()">Notizen speichern</button></div>
+</section>
+
+<section id="map" class="view">
+ <div class="panel"><h2>Weltkarte</h2><p class="small">Zoomen mit zwei Fingern bzw. im Browser. Diese Karte ist vorläufig; die kanonischen Regionalkarten bauen wir später exakt daraus.</p>
+ <div class="mapwrap"><img src="eldanor-map.png" alt="Karte von Eldanor"></div></div>
+</section>
+
+<section id="heroes" class="view">
+ <div class="panel"><h2>Helden</h2><div id="heroGrid" class="hero-grid"></div></div>
+ <div id="heroDetail"></div>
+</section>
+
+<section id="dice" class="view">
+ <div class="panel"><h2>Würfel</h2><div class="dice" id="diceButtons"></div>
+ <label>Modifikator</label><input id="mod" type="number" value="0">
+ <label>W20-Modus</label><select id="adv"><option value="normal">Normal</option><option value="adv">Vorteil</option><option value="dis">Nachteil</option></select>
+ <div id="diceResult" class="result">🎲</div></div>
+</section>
+
+<section id="chronicle" class="view">
+ <div class="panel"><h2>Chronik & Quests</h2><div id="quests"></div>
+ <input id="questTitle" placeholder="Neue Quest / Entdeckung"><textarea id="questText" rows="3" placeholder="Notiz"></textarea>
+ <button onclick="addQuest()">Eintragen</button></div>
+ <div class="panel"><h3>Gruppeninventar</h3><textarea id="groupInventory" rows="8" placeholder="Gold, Schlüssel, Karten, gemeinsame Gegenstände …"></textarea><button onclick="saveAll()">Speichern</button></div>
+</section>
+</main>
+
+<nav>
+<button data-v="home" class="active"><b>⌂</b>Start</button>
+<button data-v="map"><b>🗺</b>Karte</button>
+<button data-v="heroes"><b>⚔</b>Helden</button>
+<button data-v="dice"><b>🎲</b>Würfel</button>
+<button data-v="chronicle"><b>📖</b>Chronik</button>
+</nav>
+
+<script>
+const baseHeroes=[
+{name:"Borealis",role:"Koch · Tank · Heiler",hp:14,max:14,stats:{STR:"16 (+3)",DEX:"10 (+0)",CON:"15 (+2)",INT:"11 (+0)",WIS:"13 (+1)",CHA:"12 (+1)"},abilities:["Heilende Kürbissuppe","Kochkelle","Starker Körper"],inventory:"Kelle\nKessel\nKurzes Schwert\nMagische Lebensgewürze (3)\nSeil\nFackeln\nProviant"},
+{name:"Thalen",role:"Waldläufer · Schütze",hp:12,max:12,stats:{STR:"11 (+0)",DEX:"17 (+3)",CON:"12 (+1)",INT:"13 (+1)",WIS:"14 (+2)",CHA:"9 (-1)"},abilities:["Meisterschuss","Spurenlesen","Heimlichkeit"],inventory:"Langbogen\n20 Pfeile (2 Giftpfeile)\nMesser\nFederstahl\nSeil\nProviant"},
+{name:"Xyra",role:"Kriegerin",hp:16,max:16,stats:{STR:"18 (+4)",DEX:"13 (+1)",CON:"14 (+2)",INT:"11 (+0)",WIS:"10 (+0)",CHA:"15 (+2)"},abilities:["Schwarzes Loch","Überwältigende Stärke","Einschüchternde Präsenz"],inventory:"Runenhammer Standhaft\nKosmischer Kristall\nLederrüstung\nSeil\nProviant"},
+{name:"Serenya",role:"Blitzmagierin",hp:10,max:10,stats:{STR:"9 (-1)",DEX:"14 (+2)",CON:"12 (+1)",INT:"16 (+3)",WIS:"13 (+1)",CHA:"15 (+2)"},abilities:["Teleportationsblitz","Blitze schleudern","Funke","Arkanes Wissen"],inventory:"Magiestab\nReiseumhang\nFunke (Hund)\nSeil\nProviant"},
+{name:"Mjölnir",role:"Druide · Feuermagier",hp:13,max:13,stats:{STR:"11 (+0)",DEX:"13 (+1)",CON:"14 (+2)",INT:"16 (+3)",WIS:"17 (+3)",CHA:"12 (+1)"},abilities:["Feuerball","Flammenpeitsche","Runenkunde","Druidenkraft"],inventory:"Runenstab\nAuge der Flammen\nFlammengewand\nSeil\nProviant"},
+{name:"Kaelen",role:"Zeitmagier",hp:11,max:11,stats:{STR:"9 (-1)",DEX:"15 (+2)",CON:"12 (+1)",INT:"17 (+3)",WIS:"13 (+1)",CHA:"16 (+3)"},abilities:["Zeit verlangsamen","Zeitsprung","Schneller Verstand","Charismatischer Redner"],inventory:"Chronoklinge\nReisekleidung\nRunenfragmente\nSeil\nProviant"},
+{name:"Lyra",role:"Bestienbändigerin",hp:13,max:13,stats:{STR:"14 (+2)",DEX:"16 (+3)",CON:"13 (+1)",INT:"12 (+1)",WIS:"15 (+2)",CHA:"11 (+0)"},abilities:["Panthergefährte","Bestienverstand","Gemeinsamer Angriff","Wilde Reflexe"],inventory:"Schlankes Langschwert\nLeder- und Fellrüstung\nTierhorn\nSeil\nProviant"}
+];
+let state=JSON.parse(localStorage.getItem("eldanorState")||"null")||{heroes:baseHeroes,quests:[],sessionNote:"",groupInventory:""};
+function saveAll(){state.sessionNote=document.getElementById("sessionNote").value;state.groupInventory=document.getElementById("groupInventory").value;localStorage.setItem("eldanorState",JSON.stringify(state));}
+function renderHeroes(){
+ const g=document.getElementById("heroGrid");g.innerHTML="";
+ state.heroes.forEach((h,i)=>{let b=document.createElement("button");b.innerHTML=`<strong>${h.name}</strong><br><span class="small">${h.role}</span><br><span class="hp">${h.hp}/${h.max}</span>`;b.onclick=()=>showHero(i);g.appendChild(b)});
+}
+function showHero(i){
+ const h=state.heroes[i], d=document.getElementById("heroDetail");
+ d.innerHTML=`<div class="panel"><h2>${h.name}</h2><div class="small">${h.role}</div>
+ <div class="counter"><span class="hp">HP ${h.hp}/${h.max}</span><button onclick="hp(${i},-1)">−</button><button onclick="hp(${i},1)">+</button></div>
+ <h3>Attribute</h3>${Object.entries(h.stats).map(([k,v])=>`<div class="stat"><span>${k}</span><b>${v}</b></div>`).join("")}
+ <h3>Fähigkeiten</h3><div class="tags">${h.abilities.map(x=>`<span class="tag">${x}</span>`).join("")}</div>
+ <h3>Inventar</h3><textarea rows="9" oninput="state.heroes[${i}].inventory=this.value;saveAll()">${h.inventory}</textarea></div>`;
+}
+function hp(i,n){state.heroes[i].hp=Math.max(0,Math.min(state.heroes[i].max,state.heroes[i].hp+n));saveAll();renderHeroes();showHero(i)}
+function roll(sides){
+ let mod=Number(document.getElementById("mod").value||0), mode=document.getElementById("adv").value, rolls=[];
+ if(sides===20 && mode!=="normal"){rolls=[1+Math.floor(Math.random()*20),1+Math.floor(Math.random()*20)]}else rolls=[1+Math.floor(Math.random()*sides)];
+ let raw=rolls.length===2?(mode==="adv"?Math.max(...rolls):Math.min(...rolls)):rolls[0];
+ document.getElementById("diceResult").innerHTML=`${rolls.join(" / ")} ${mod>=0?"+":"−"} ${Math.abs(mod)} = <b>${raw+mod}</b>`;
+}
+function addQuest(){let t=document.getElementById("questTitle"),x=document.getElementById("questText");if(!t.value.trim())return;state.quests.unshift({t:t.value,x:x.value});t.value="";x.value="";saveAll();renderQuests()}
+function renderQuests(){document.getElementById("quests").innerHTML=state.quests.map((q,i)=>`<div class="quest"><b>${q.t}</b><div>${q.x}</div><button class="danger" onclick="state.quests.splice(${i},1);saveAll();renderQuests()">Entfernen</button></div>`).join("")||'<p class="small">Noch keine Einträge.</p>'}
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".view,nav button").forEach(x=>x.classList.remove("active"));document.getElementById(b.dataset.v).classList.add("active");b.classList.add("active")});
+[4,6,8,10,12,20].forEach(n=>{let b=document.createElement("button");b.textContent="W"+n;b.onclick=()=>roll(n);document.getElementById("diceButtons").appendChild(b)});
+document.getElementById("sessionNote").value=state.sessionNote||"";document.getElementById("groupInventory").value=state.groupInventory||"";
+renderHeroes();renderQuests();
+window.addEventListener("beforeunload",saveAll);
+if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(()=>{});
+</script>
+</body></html>
