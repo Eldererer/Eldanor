@@ -1,29 +1,36 @@
-ELDANOR PWA – PROTOTYP V1
+ELDANOR PWA V3 – Hybrid-Design
 
-Windows:
-1. Ordner entpacken.
-2. Am einfachsten über einen kleinen lokalen Webserver starten.
-   Beispiel mit Python (falls installiert):
-   python -m http.server 8080
-3. Im Browser http://localhost:8080 öffnen.
+NEU IN V3
+- Hybrid-Look: dunkle Fantasy-App + Pergamentbereiche + Gold
+- Alle 7 bisherigen Helden stehen bei der Auswahl zur Verfügung
+- Charakterporträts direkt eingebaut
+- Persönliche Heldenansicht mit großem Porträt
+- HP-Leiste, RK, Initiative, Bewegung, Übungsbonus und Stufe
+- Attribute, Fertigkeiten, Angriffe, Fähigkeiten und Inventar
+- Normal / Vorteil / Nachteil direkt beim Helden einstellbar
+- echte Würfelanimation bei freien Würfen, Proben, Angriffen und Schaden
+- Wurfverlauf
+- Tagebuch mit Quests, Gerüchten, NPCs, Orten und Notizen
+- Weltkarte mit Zoom-Schaltflächen
+- eigene Charaktere mit optionalem Foto erstellen
+- Porträt später austauschbar
+- Held importieren/exportieren
+- lokale Chronik sichern/importieren
+- V2-Daten werden beim ersten Start nach Möglichkeit automatisch übernommen
 
-Wichtig:
-Ein Doppelklick auf index.html zeigt die App zwar, aber Service Worker/PWA-Funktionen
-benötigen einen Webserver (localhost oder HTTPS).
+GITHUB PAGES – UPDATE
+1. ZIP entpacken.
+2. Alle Dateien und den Ordner "portraits" in dein bestehendes GitHub-Repository hochladen.
+3. Vorhandene index.html, sw.js, manifest.webmanifest usw. ersetzen.
+4. Commit changes.
+5. Kurz warten, bis GitHub Pages aktualisiert ist.
+6. Eldanor auf dem iPhone vollständig schließen und neu öffnen.
 
-iPhone:
-Für "Zum Home-Bildschirm" muss die App über HTTPS erreichbar sein.
-Dazu kann der Ordner später z.B. auf einen privaten Webspace / GitHub Pages / Cloudflare Pages.
-Die App selbst benötigt kein Backend; Daten werden lokal im Browser gespeichert.
+WENN NOCH V2 ANGEZEIGT WIRD
+- In Safari die GitHub-Pages-Adresse einmal neu laden.
+- Falls nötig die Home-Screen-App entfernen und die Seite danach erneut über
+  Safari > Teilen > Zum Home-Bildschirm hinzufügen.
+- Der Service Worker heißt in dieser Version eldanor-v3.1 und löscht ältere App-Caches.
 
-V1 enthält:
-- Eldanor-Weltkarte (vorläufig)
-- 7 Helden
-- HP-Verwaltung
-- Attribute/Fähigkeiten/Inventar
-- W4/W6/W8/W10/W12/W20
-- W20 Vorteil/Nachteil + Modifikator
-- Chronik/Quests
-- Gruppeninventar
-- lokale Speicherung
-- Offline-Grundgerüst
+SPEICHERUNG
+Weiterhin lokal pro Gerät. Multiplayer-Synchronisierung folgt später.
