@@ -1,19 +1,30 @@
-ELDANOR V5.1 – TESTBERICHT
+ELDANOR V5.2 – TESTBERICHT
 
-- Regelwerk statisch: OK
-- Hilfe Bottom-Sheet: OK
-- Attribute antippbar: OK
-- Fertigkeiten antippbar: OK
-- Karte natives Scrollen: OK
-- Karte Pinch-Zoom: OK
-- Karte Doppeltipp: OK
-- Kartenbuttons: OK
-- V5-Datenmigration: OK
-- Neue Versionsdateien: OK
-- JavaScript-Syntax: OK
-- Service-Worker-Syntax: OK
-- Manifest: OK
-- HTML-Dateireferenzen: OK
-- HTML-IDs eindeutig: OK
+Gefundene Ursache in V5.1
+- Die sechs freien Würfelbuttons wurden im JavaScript erzeugt, bevor die DOM-Referenz diceButtons initialisiert war.
+- Browserfehler: ReferenceError / Zugriff vor Initialisierung.
+- Dadurch wurde die weitere JavaScript-Ausführung abgebrochen.
+- Deshalb waren gleichzeitig Würfelauswahl, Kurzhilfen und Kartensteuerung ohne Funktion.
+- Das Regelwerk blieb sichtbar, weil es statisch im HTML liegt.
 
-Zusätzlich folgt ein Browser-Smoke-Test mit Chromium. Physische Zwei-Finger-Gesten auf einem echten iPhone können hier nicht vollständig simuliert werden.
+V5.2 Korrektur
+- Würfelinitialisierung in initDiceControls() verschoben.
+- initDiceControls() wird erst NACH allen DOM-Referenzen aufgerufen.
+- Würfelbuttons verwenden robuste addEventListener-Handler.
+- Würfelansicht und Banner zusätzlich zentriert.
+- Neuer Service-Worker-Cache eldanor-v5.2.0.
+- Neue Dateinamen app-v52.js / styles-v52.css gegen alten Browsercache.
+
+Prüfungen
+- node --check app-v52.js: BESTANDEN
+- JavaScript-Boot mit DOM-Testumgebung: BESTANDEN
+- erzeugte freie Würfelbuttons: 6 / 6
+- Kurzhilfe getestet: WIS öffnet 'Weisheit': BESTANDEN
+- Kartenzoom getestet: 100 % -> 135 %: BESTANDEN
+- freier W6-Wurf getestet: BESTANDEN
+- statische HTML-Dateiverweise: BESTANDEN
+- CSS-Dateiverweise: BESTANDEN
+- Service-Worker-Dateiverweise: BESTANDEN
+
+Hinweis
+Ein echter Zwei-Finger-Pinch auf einem physischen iPhone lässt sich in der Container-Testumgebung nicht simulieren. Die Karteninitialisierung läuft nun aber wieder, und der funktionale Zoompfad wurde getestet.
