@@ -1,22 +1,18 @@
-ELDANOR PWA V4
+ELDANOR PWA V5
 
-Neu in V4
-- neue Charakterporträts im Stil der Designentwürfe
-- überarbeitete Heldenauswahl mit großen Bildkarten
-- dekorative Icons und Banner direkt in der App
-- neue Eldanor-Karte im App-Stil
-- Fehler bei "Neuen Helden erstellen" behoben
-- Stufenaufstieg & Bearbeiten: Level, HP, RK, Bewegung, Übungsbonus ändern
-- neue Angriffe und Fähigkeiten hinzufügen, vorhandene entfernen
-- Standardhelden vollständig zurücksetzbar
-- Originalporträts wiederherstellbar
-- Spielmodus als Schnellansicht für die Session
-- Gruppenansicht erweitert
-- letzter Tagebucheintrag bearbeitbar
+Neu:
+- kompakte Regeln-Seite
+- Charakterwahl als große Hochformat-Karten
+- jederzeit zurück zur Charakterwahl
+- Helden-Tabs: Übersicht, Fertigkeiten, Angriffe, Fähigkeiten, Inventar
+- Angriffe und Fähigkeiten direkt im jeweiligen Tab bearbeiten
+- Stufenaufstieg direkt in der Übersicht
+- vereinfachter Attributsaufstieg: 2 Punkte auf Stufe 4/8/12/16/19, max. 20
+- Charaktererstellung: D&D-artiger 27-Punkte-Kauf ODER 4W6 (niedrigsten Würfel streichen)
+- kurze Hilfen per Tipp auf Attribute, Fertigkeiten, RK, Initiative, Übungsbonus usw.
+- Karte mit Ein-Finger-Verschieben und Zwei-Finger-Pinch-Zoom
+- Tagebucheinträge einzeln bearbeitbar
 
-Installation / Update
-1. ZIP entpacken
-2. Alle Dateien samt Ordnern in das GitHub-Repository laden und alte Dateien ersetzen
-3. Commit changes
-4. GitHub Pages kurz neu laden
-5. Wenn am iPhone noch alte Dateien angezeigt werden: Safari-Seite neu laden oder die Homescreen-App einmal entfernen und neu hinzufügen
+UPLOAD
+Den INHALT dieser ZIP ins Hauptverzeichnis des GitHub-Repositories hochladen und vorhandene index.html, sw.js und manifest.webmanifest ersetzen.
+Danach auf dem iPhone einmal https://eldererer.github.io/Eldanor/?v=50 in Safari öffnen.

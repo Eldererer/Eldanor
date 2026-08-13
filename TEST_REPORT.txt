@@ -1,0 +1,26 @@
+ELDANOR V5 – TESTBERICHT
+
+Geprüft:
+- JavaScript-Syntax: OK
+- Service-Worker-Syntax: OK
+- Manifest JSON: OK
+- alle referenzierten lokalen Dateien vorhanden: OK
+- alle HTML-IDs eindeutig: OK
+- Regelübersicht vorhanden: OK
+- Hochformat-Charakterwahl / Carousel: OK
+- Charakterwahl über Kopfzeile, Heldenansicht und Mehr-Seite erreichbar: OK
+- Angriffe direkt im Angriffe-Tab bearbeiten/hinzufügen/löschen: OK
+- Fähigkeiten direkt im Fähigkeiten-Tab bearbeiten/hinzufügen/löschen: OK
+- Stufenaufstieg direkt in der Heldenübersicht: OK
+- Attributspunkte auf Stufe 4/8/12/16/19: OK
+- Charaktererstellung mit 27-Punkte-Kauf: OK
+- Charaktererstellung mit 4W6, niedrigsten Würfel streichen: OK
+- Tap-Hilfen: OK
+- Touch/Pointer-Pinch-Zoom der Karte: OK
+- Grunddaten des Helden bearbeiten: OK
+- Standardheld und Originalporträt zurücksetzen: OK
+- Würfelanimation erhalten: OK
+- Service Worker enthält alle benötigten App-Dateien: OK
+
+Hinweis:
+Ein echter Fingertest auf einem physischen iPhone kann in der Entwicklungsumgebung nicht vollständig simuliert werden. Die Touch-Steuerung nutzt Pointer Events, die von aktuellen iOS-Safari-Versionen unterstützt werden.
