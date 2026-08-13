@@ -1,18 +1,15 @@
-ELDANOR PWA V5
+ELDANOR PWA V5.1
 
-Neu:
-- kompakte Regeln-Seite
-- Charakterwahl als große Hochformat-Karten
-- jederzeit zurück zur Charakterwahl
-- Helden-Tabs: Übersicht, Fertigkeiten, Angriffe, Fähigkeiten, Inventar
-- Angriffe und Fähigkeiten direkt im jeweiligen Tab bearbeiten
-- Stufenaufstieg direkt in der Übersicht
-- vereinfachter Attributsaufstieg: 2 Punkte auf Stufe 4/8/12/16/19, max. 20
-- Charaktererstellung: D&D-artiger 27-Punkte-Kauf ODER 4W6 (niedrigsten Würfel streichen)
-- kurze Hilfen per Tipp auf Attribute, Fertigkeiten, RK, Initiative, Übungsbonus usw.
-- Karte mit Ein-Finger-Verschieben und Zwei-Finger-Pinch-Zoom
-- Tagebucheinträge einzeln bearbeitbar
+Gezielter Fix für V5:
+- Regelwerk steht jetzt fest im HTML und kann nicht durch einen Renderfehler verschwinden.
+- Hilfen öffnen als großes Bottom-Sheet; Werte und Begriffe sind direkt antippbar.
+- Karte: natives iOS-Verschieben mit einem Finger, eigener Zwei-Finger-Pinch-Zoom, Doppeltipp sowie + / − / ◎.
+- Vorhandene V5-Charakterdaten werden übernommen.
 
 UPLOAD
-Den INHALT dieser ZIP ins Hauptverzeichnis des GitHub-Repositories hochladen und vorhandene index.html, sw.js und manifest.webmanifest ersetzen.
-Danach auf dem iPhone einmal https://eldererer.github.io/Eldanor/?v=50 in Safari öffnen.
+Den INHALT dieser ZIP ins Hauptverzeichnis des GitHub-Repositories hochladen.
+index.html, sw.js und manifest.webmanifest ersetzen; app-v51.js und styles-v51.css neu hochladen.
+Alte v50-Dateien können liegen bleiben.
+
+Danach in Safari öffnen:
+https://eldererer.github.io/Eldanor/?v=51
