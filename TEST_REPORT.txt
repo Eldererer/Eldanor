@@ -1,5 +1,40 @@
 ELDANOR V5.3 – CODEX-DESIGN – TESTBERICHT
 
+V5.7:
+- Kopfzeile mit Level- und Wissenssiegel: OK
+- Hauptnavigation mit neuen Siegeln und spezialisierten Karten-/Tagebuchicons: OK
+- fünf Heldentabs mit passenden Icons: OK
+- acht Regelkarten mit passenden Icons: OK
+- Spielmodus mit sechs ikonischen Schnellaktionen: OK
+- keine fehlenden Bilder: OK
+- kein horizontaler Überlauf bei 390 × 844 Pixeln: OK
+- W20-Wurf erzeugt Ergebnis: OK
+- Kartenzoom 100 % -> 135 %: OK
+- Browserkonsole ohne Fehler/Warnungen: OK
+
+V5.5:
+- sechs Würfelbilder geladen und bedienbar: OK
+- animierter W20 zeigt Ergebnis: OK
+- Würfelbilder bei allen 18 Fertigkeiten: OK
+- neue hochauflösende Karte geladen: OK
+- Kartenzoom und Scrollbereich: OK
+- keine sichtbaren Fragezeichen in der Heldenansicht: OK
+- Browserkonsole ohne Fehler/Warnungen: OK
+
+V5.6:
+- HP-Siegel in der Heldenübersicht: OK
+- fünf Schnellwert-Siegel: OK
+- sechs Attribut-Siegel: OK
+- Siegel in Fertigkeiten, Angriffen und Fähigkeiten: OK
+- Hilfefenster weiterhin erreichbar: OK
+- Browserkonsole ohne Fehler/Warnungen: OK
+
+V5.4:
+- HP-Anzeige ohne Fragezeichen: OK
+- HP-Hilfe weiterhin durch Antippen erreichbar: OK
+- Würfel, Karte und Hilfen nach Stilupdate: OK
+- Browserkonsole ohne Fehler/Warnungen: OK
+
 Zusätzlich geprüft:
 - App-Start ohne JavaScript-Fehler: OK
 - unterschiedliche Hilfe-Siegel werden geladen: OK

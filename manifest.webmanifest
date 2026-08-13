@@ -1,7 +1,7 @@
 {
   "name": "Eldanor – Abenteuerbegleiter",
   "short_name": "Eldanor",
-  "start_url": "./?v=53",
+  "start_url": "./?v=57",
   "id": "./",
   "display": "standalone",
   "background_color": "#081019",
