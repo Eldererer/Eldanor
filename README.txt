@@ -1,4 +1,14 @@
-ELDANOR PWA V5.2 – Funktionsfix
+ELDANOR PWA V5.3 – CODEX-DESIGN
+
+Update 5.3.1:
+- neues Eldanor-Shortcut-Icon für iPhone-Homescreen und PWA
+
+Neu:
+- 16 eigenständige Hilfe-Siegel im Leder-/Goldstil
+- Hilfe als Codex-Karte mit Pergamenttext und Spielhinweis
+- veredelte Navigation, Rahmen, Buttons und Oberflächen
+- kompaktere Karten- und Würfelansicht auf dem iPhone
+- bestehende Touch-, Hilfe- und Würfellogik beibehalten
 
 Behoben:
 - Würfelauswahl wurde wegen eines Initialisierungsfehlers nicht erzeugt.

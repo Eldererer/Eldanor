@@ -1,20 +1,20 @@
 {
   "name": "Eldanor – Abenteuerbegleiter",
   "short_name": "Eldanor",
-  "start_url": "./?v=52",
-  "id": "./?v=52",
+  "start_url": "./?v=53",
+  "id": "./",
   "display": "standalone",
   "background_color": "#081019",
   "theme_color": "#0d1220",
   "icons": [
     {
-      "src": "icon-v42-192.png",
+      "src": "icon-codex-v53-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icon-v42-512.png",
+      "src": "icon-codex-v53-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"

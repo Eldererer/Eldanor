@@ -1,4 +1,12 @@
-ELDANOR V5.2 – TESTBERICHT
+ELDANOR V5.3 – CODEX-DESIGN – TESTBERICHT
+
+Zusätzlich geprüft:
+- App-Start ohne JavaScript-Fehler: OK
+- unterschiedliche Hilfe-Siegel werden geladen: OK
+- Hilfekarte öffnet und schließt: OK
+- W20 würfeln und Ergebnis anzeigen: OK
+- Karte vergrößern und verschieben: OK
+- Darstellung bei 390 × 844 Pixeln: OK
 
 Gefundene Ursache in V5.1
 - Die sechs freien Würfelbuttons wurden im JavaScript erzeugt, bevor die DOM-Referenz diceButtons initialisiert war.
