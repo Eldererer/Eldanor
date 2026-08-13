@@ -3,8 +3,8 @@
   "short_name": "Eldanor",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#0e0c0a",
-  "theme_color": "#13100d",
+  "background_color": "#081019",
+  "theme_color": "#0d1220",
   "icons": [
     {
       "src": "icon-192.png",
