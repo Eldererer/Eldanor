@@ -2,7 +2,7 @@
 <html lang="de"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=5,user-scalable=yes">
 <meta name="theme-color" content="#0d1220"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Eldanor</title><link rel="manifest" href="manifest.webmanifest?v=57"><link rel="apple-touch-icon" sizes="180x180" href="icon-codex-v53-180.png?v=57"><link rel="stylesheet" href="styles-v53.css?v=57">
+<title>Eldanor</title><link rel="manifest" href="manifest.webmanifest?v=58"><link rel="apple-touch-icon" sizes="180x180" href="icon-codex-v53-180.png?v=58"><link rel="stylesheet" href="styles-v53.css?v=58">
 </head><body>
 <header class="topbar"><button class="top-hero-btn" onclick="openHeroChooser()" aria-label="Charakterwahl"><img src="help-level-v53.webp" alt=""></button><div class="brand"><img src="icons-crown-v42.webp" alt=""><div><h1>ELDANOR</h1><div id="headerHero">Chroniken einer erwachenden Welt</div></div></div><button class="top-help-btn" onclick="switchView('rules')" aria-label="Regeln"><img src="help-int-v53.webp" alt=""></button></header>
 <main>
@@ -36,5 +36,5 @@
 <div id="basicEditOverlay" class="overlay"><div class="modal"><div class="modal-head"><div><div class="eyebrow">HELD BEARBEITEN</div><h2>Grunddaten</h2></div><button class="icon-btn" onclick="closeOverlay('basicEditOverlay')">✕</button></div><div class="parchment"><label>Name<input id="beName"></label><label>Rolle / Klasse<input id="beRole"></label><label>Vorgeschichte<textarea id="beStory" rows="5"></textarea></label><div class="two"><label>Max. HP<input id="beMaxHp" type="number"></label><label>Rüstungsklasse<input id="beAC" type="number"></label><label>Bewegung (m)<input id="beSpeed" type="number"></label></div><button class="gold wide" onclick="saveBasicEdit()">Änderungen speichern</button></div></div></div>
 <div id="helpOverlay" class="overlay help-overlay" role="dialog" aria-modal="true" aria-labelledby="helpTitle"><div class="help-card"><div class="sheet-grabber" aria-hidden="true"></div><button class="icon-btn help-close" onclick="closeOverlay('helpOverlay')" aria-label="Hilfe schließen">✕</button><div class="help-heading"><div id="helpIcon" class="help-icon"></div><div><div class="eyebrow">KURZHILFE</div><h2 id="helpTitle"></h2></div></div><p id="helpText"></p><div id="helpExtra" class="help-extra"></div><button class="gold wide help-done" onclick="closeOverlay('helpOverlay')">Verstanden</button></div></div>
 <div id="gameMode" class="overlay"><div class="modal"><div class="modal-head"><div><div class="eyebrow">SPIELMODUS</div><h2>Schnellansicht</h2></div><button class="icon-btn" onclick="closeOverlay('gameMode')">✕</button></div><div id="gameModeInner"></div></div></div>
-<script src="app-v53.js?v=57"></script></body></html>
+<script src="app-v53.js?v=58"></script></body></html>
 

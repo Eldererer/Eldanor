@@ -1,5 +1,17 @@
 ELDANOR PWA V5.3 – CODEX-DESIGN
 
+Update 5.8:
+- Spielmodus als kompakte Tisch-Schnellansicht vollständig überarbeitet
+- Würfelergebnisse bleiben sichtbar im Spielmodus
+- Initiative, freier W20 und bis zu vier heldenspezifische Schnellproben
+- Angriffe und Schadenswürfe getrennt direkt ausführbar
+- HP-Steuerung mit −5, −1, Setzen, +1 und +5
+- wichtige Werte inklusive Übungsbonus und passiver Wahrnehmung
+- Fähigkeiten als schnell aufklappbare Erinnerung
+- Erfahrungspunkte frei eintragbar und dauerhaft gespeichert
+- EP-Balken nach den üblichen kumulierten D&D-5e-Stufenschwellen
+- Hinweis und direkter Einstieg, sobald ein Stufenaufstieg bereit ist
+
 Update 5.7:
 - Codex-Siegel in Kopfzeile und Hauptnavigation erweitert
 - eigene Siegel in allen Heldentabs: Übersicht, Fertigkeiten, Angriffe, Fähigkeiten und Inventar

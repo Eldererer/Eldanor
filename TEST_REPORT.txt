@@ -1,5 +1,18 @@
 ELDANOR V5.3 – CODEX-DESIGN – TESTBERICHT
 
+V5.8:
+- neue Spielmodus-Schnellansicht bei 390 × 844 Pixeln: OK
+- Initiative bleibt im Spielmodus und zeigt Ergebnis: OK
+- Angriff und Schaden zeigen Ergebnis im Spielmodus: OK
+- Wurf wird zusätzlich im Verlauf gespeichert: OK
+- heldenspezifische Schnellproben: OK
+- HP-Schritte und Setzen-Schaltfläche vorhanden: OK
+- EP-Eingabe 275 / 300 und dauerhafte Speicherung: OK
+- EP-Balken 92 % / 100 % korrekt: OK
+- Stufenaufstieg bei erreichter Schwelle angeboten: OK
+- Übergang zum vorhandenen Stufenaufstieg: OK
+- keine fehlenden Bilder oder Browserfehler: OK
+
 V5.7:
 - Kopfzeile mit Level- und Wissenssiegel: OK
 - Hauptnavigation mit neuen Siegeln und spezialisierten Karten-/Tagebuchicons: OK
